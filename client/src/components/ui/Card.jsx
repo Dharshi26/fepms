@@ -24,7 +24,7 @@ const Card = ({
   
   // Variant classes
   const variantClasses = {
-    default: 'bg-surface-DEFAULT border-border shadow-card',
+    default: 'bg-surface border-border shadow-card',
     elevated: 'bg-surface-elevated border-border-dark/10 shadow-md',
     dark: 'bg-surface-dark border-border-dark text-text-inverse shadow-lg',
   };

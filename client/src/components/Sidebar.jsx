@@ -8,11 +8,11 @@ const NAV_ITEMS = [
   { path: '/equipment',     label: 'Equipment',             icon: '⚙️'  },
   { path: '/maintenance',   label: 'Preventive Maintenance', icon: '🔧' },
   { path: '/service-logs',  label: 'Service Logs',          icon: '📋' },
-  { path: '/warranty',      label: 'Warranty',              icon: '🛡️'  },
-  { path: '/warranty-claims', label: 'Warranty Claims',     icon: '📄' },
+  { path: '/warranties',    label: 'Warranty',              icon: '🛡️'  },
+  { path: '/claims',        label: 'Warranty Claims',       icon: '📄' },
   { path: '/reports',       label: 'Reports',               icon: '📊' },
   { path: '/notifications', label: 'Notifications',         icon: '🔔' },
-  { path: '/users',         label: 'Users',                 icon: '👥' },
+  { path: '/profile',       label: 'Profile',               icon: '👤' },
   { path: '/settings',      label: 'Settings',              icon: '⚙️'  },
 ];
 

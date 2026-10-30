@@ -176,7 +176,7 @@ export const TableActions = ({
           <span className="text-sm text-text-secondary">
             {selectedCount} selected
           </span>
-          <div className="h-4 w-px bg-border-DEFAULT"></div>
+          <div className="h-4 w-px bg-border"></div>
         </div>
       )}
     </div>

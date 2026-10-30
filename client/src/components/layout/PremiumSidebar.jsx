@@ -110,17 +110,17 @@ const PremiumSidebar = ({
       ],
     },
     {
-      title: 'Administration',
+      title: 'Account',
       items: [
-        { 
-          path: '/users', 
-          label: 'Users', 
-          icon: 'users'
-        },
         { 
           path: '/settings', 
           label: 'Settings', 
           icon: 'settings'
+        },
+        { 
+          path: '/profile', 
+          label: 'Profile', 
+          icon: 'users'
         },
       ],
     },

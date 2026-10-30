@@ -50,20 +50,20 @@ const PAGE_CONFIGS = {
     breadcrumbs: ['Maintenance', 'Service Logs', 'Details'],
   },
   '/warranties': {
-    title: 'Warranties',
-    breadcrumbs: ['Warranty', 'Active Warranties'],
+    title: 'Warranty',
+    breadcrumbs: ['Warranty Management', 'Active Warranties'],
   },
   '/warranties/:id': {
     title: 'Warranty Details',
-    breadcrumbs: ['Warranty', 'Active Warranties', 'Details'],
+    breadcrumbs: ['Warranty Management', 'Active Warranties', 'Details'],
   },
   '/claims': {
     title: 'Warranty Claims',
-    breadcrumbs: ['Warranty', 'Claims'],
+    breadcrumbs: ['Warranty Management', 'Claims'],
   },
   '/claims/:id': {
     title: 'Claim Details',
-    breadcrumbs: ['Warranty', 'Claims', 'Details'],
+    breadcrumbs: ['Warranty Management', 'Claims', 'Details'],
   },
   '/reports': {
     title: 'Reports',
@@ -73,17 +73,13 @@ const PAGE_CONFIGS = {
     title: 'Notifications',
     breadcrumbs: ['Analytics', 'Notifications'],
   },
-  '/users': {
-    title: 'Users',
-    breadcrumbs: ['Administration', 'Users'],
-  },
   '/settings': {
     title: 'Settings',
-    breadcrumbs: ['Administration', 'Settings'],
+    breadcrumbs: ['Settings', 'Preferences'],
   },
   '/profile': {
-    title: 'Profile',
-    breadcrumbs: ['Administration', 'Profile'],
+    title: 'My Profile',
+    breadcrumbs: ['Account', 'Profile'],
   },
 };
 

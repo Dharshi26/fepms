@@ -176,7 +176,7 @@ export default function MaintenancePage() {
             >
               <option value="all">All Status</option>
               <option value="scheduled">Scheduled</option>
-              <option value="in-progress">In Progress</option>
+              <option value="in_progress">In Progress</option>
               <option value="completed">Completed</option>
               <option value="cancelled">Cancelled</option>
             </select>

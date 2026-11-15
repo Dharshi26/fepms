@@ -15,8 +15,8 @@ export default function ServiceLogsPage() {
     if (searchTerm) {
       result = result.filter(log =>
         log.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        log.technician.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        log.equipmentName.toLowerCase().includes(searchTerm.toLowerCase())
+        log.technician.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        log.equipment.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
@@ -33,7 +33,7 @@ export default function ServiceLogsPage() {
         case 'status':
           return a.status.localeCompare(b.status);
         case 'technician':
-          return a.technician.localeCompare(b.technician);
+          return a.technician.name.localeCompare(b.technician.name);
         default:
           return 0;
       }
@@ -197,8 +197,8 @@ function ServiceLogCard({ log, getStatusColor, getStatusIcon }) {
     <div className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition p-5 space-y-3">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="text-sm font-semibold text-slate-900">{log.equipmentName}</h3>
-          <p className="text-xs text-slate-500 mt-1">{log.description}</p>
+          <h3 className="text-sm font-semibold text-slate-900">{log.equipment}</h3>
+          <p className="text-xs text-slate-500 mt-1">{log.issueReported}</p>
         </div>
         <span className={`text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 flex-shrink-0 ml-2 ${getStatusColor(log.status)}`}>
           <span>{getStatusIcon(log.status)}</span>
@@ -213,14 +213,14 @@ function ServiceLogCard({ log, getStatusColor, getStatusIcon }) {
         </div>
         <div className="flex items-center gap-2 text-xs">
           <User size={14} className="text-slate-400" />
-          <span className="text-slate-700">{log.technician}</span>
+          <span className="text-slate-700">{log.technician.name}</span>
         </div>
       </div>
 
-      {log.notes && (
+      {log.techniciansNotes && (
         <div className="text-xs text-slate-600 bg-slate-50 p-3 rounded-lg">
           <p className="font-medium text-slate-700 mb-1">Notes</p>
-          <p>{log.notes}</p>
+          <p>{log.techniciansNotes}</p>
         </div>
       )}
 

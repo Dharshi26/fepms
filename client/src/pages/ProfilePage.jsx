@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Mail, Phone, MapPin, Briefcase, Calendar, Edit, Camera, Save, X } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Briefcase, Calendar, Edit, Save, X } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function ProfilePage() {

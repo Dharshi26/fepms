@@ -109,7 +109,6 @@ const OutletsPage = () => {
   
   // Handle view outlet details
   const handleViewOutlet = (outlet) => {
-    console.log('View outlet:', outlet);
     // In a real app, you might navigate to a detail page
     alert(`Viewing ${outlet.name}\n\nLocation: ${outlet.address.city}, ${outlet.address.state}\nStatus: ${outlet.status}\nEquipment: ${outlet.equipmentCount} units\nRevenue: $${outlet.revenue.toLocaleString()}`);
   };
@@ -119,7 +118,6 @@ const OutletsPage = () => {
     setLoading(true);
     // Simulate API call
     setTimeout(() => {
-      console.log('Deleting outlets:', selectedOutlets);
       setSelectedOutlets([]);
       setShowDeleteConfirm(false);
       setLoading(false);
@@ -330,7 +328,7 @@ const OutletsPage = () => {
           <Button
             variant="outline"
             icon="download"
-            onClick={() => console.log('Export all outlets')}
+            onClick={() => {}}
           >
             Export All
           </Button>
@@ -627,7 +625,7 @@ const OutletsPage = () => {
             variant="outline"
             size="sm"
             icon="download"
-            onClick={() => console.log('Export selected:', selectedOutlets)}
+            onClick={() => {}}
           >
             Export Selected
           </Button>
@@ -637,7 +635,6 @@ const OutletsPage = () => {
             size="sm"
             icon="bell"
             onClick={() => {
-              console.log('Notify selected:', selectedOutlets);
               alert(`Notification sent to ${selectedOutlets.length} outlet(s)`);
             }}
           >

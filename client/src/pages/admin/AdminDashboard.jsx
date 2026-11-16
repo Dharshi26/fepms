@@ -22,8 +22,7 @@ import {
   mockMaintenance,
   maintenanceStats,
 } from '../../mock/maintenance';
-import { mockWarranties } from '../../mock/warranties';
-import { mockWarrantyClaims } from '../../mock/warranties';
+import { mockWarranties, mockWarrantyClaims } from '../../mock/warranties';
 
 const AdminDashboard = () => {
   // Calculate stats

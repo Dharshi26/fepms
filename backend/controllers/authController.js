@@ -86,11 +86,13 @@ const login = async (req, res, next) => {
       },
     });
   } catch (error) {
+    console.error(`[AuthController.login] Error: ${error.message}`, {
+      email: req.body?.email,
+      timestamp: new Date().toISOString(),
+    });
     next(error);
   }
 };
-
-// @desc    Get currently authenticated user
 // @route   GET /api/auth/me
 // @access  Protected
 const getMe = async (req, res) => {

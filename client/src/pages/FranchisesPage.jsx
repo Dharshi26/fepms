@@ -213,7 +213,7 @@ const FranchisesPage = () => {
             size="sm"
             icon="edit"
             className="text-text-tertiary hover:text-text-primary"
-            onClick={() => console.log('Edit franchise:', franchise.id)}
+            onClick={() => {}}
           >
             Edit
           </Button>
@@ -247,7 +247,7 @@ const FranchisesPage = () => {
           <Button
             variant="outline"
             icon="download"
-            onClick={() => console.log('Export franchises')}
+            onClick={() => {}}
           >
             Export
           </Button>
@@ -478,7 +478,7 @@ const FranchisesPage = () => {
             variant="outline"
             size="sm"
             icon="download"
-            onClick={() => console.log('Export selected:', selectedFranchises)}
+            onClick={() => {}}
           >
             Export Selected
           </Button>
@@ -501,7 +501,7 @@ const FranchisesPage = () => {
         loading={loading}
         striped
         hover
-        onRowClick={(franchise) => console.log('Row clicked:', franchise.id)}
+        onRowClick={() => {}}
         emptyText="No franchises match your search criteria"
         emptyState={
           <EmptyState

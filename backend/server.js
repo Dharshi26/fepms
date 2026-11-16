@@ -5,6 +5,26 @@ const path = require('path');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 
+// Validate required environment variables
+const requiredEnvVars = ['MONGO_URI', 'JWT_SECRET'];
+const missingEnvVars = requiredEnvVars.filter(varName => !process.env[varName]);
+
+if (missingEnvVars.length > 0) {
+  console.error(`❌ Missing required environment variables: ${missingEnvVars.join(', ')}`);
+  console.error('Please configure the following in your .env file:');
+  missingEnvVars.forEach(varName => {
+    console.error(`   - ${varName}`);
+  });
+  process.exit(1);
+}
+
+// Validate CORS configuration
+const clientUrl = process.env.CLIENT_URL;
+if (process.env.NODE_ENV === 'production' && !clientUrl) {
+  console.error('❌ CLIENT_URL must be configured in production environment');
+  process.exit(1);
+}
+
 // Route imports
 const authRoutes = require('./routes/auth');
 const franchiseRoutes = require('./routes/franchises');
@@ -24,10 +44,17 @@ connectDB();
 const app = express();
 
 // ── Middleware ──────────────────────────────────────────────────────────────
-app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+// Configure CORS with environment variable
+const corsOptions = {
+  origin: clientUrl || 'http://localhost:5173',
   credentials: true,
-}));
+};
+
+if (process.env.NODE_ENV === 'production' && clientUrl) {
+  corsOptions.origin = clientUrl.split(',').map(url => url.trim());
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
